@@ -10,7 +10,6 @@ use Yii\Html\Helper\CssClass;
 use Yii\Widget\AbstractWidget;
 
 use function strtr;
-use function trim;
 
 /**
  * Represents an alert part.
