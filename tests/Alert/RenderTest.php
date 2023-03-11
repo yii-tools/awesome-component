@@ -211,7 +211,8 @@ final class RenderTest extends TestCase
         Assert::equalsWithoutLE(
             <<<HTML
             <div id="w0-alert" role="alert">
-            <span class="tests-class">Header title</span><span>This is a test.</span>
+            <span class="tests-class">Header title</span>
+            <span>This is a test.</span>
             <button>&times;</button>
             </div>
             HTML,
@@ -230,7 +231,8 @@ final class RenderTest extends TestCase
         Assert::equalsWithoutLE(
             <<<HTML
             <div id="w0-alert" role="alert">
-            <span class="tests-class">Header title</span><span>This is a test.</span>
+            <span class="tests-class">Header title</span>
+            <span>This is a test.</span>
             <button>&times;</button>
             </div>
             HTML,
@@ -251,7 +253,8 @@ final class RenderTest extends TestCase
             <div id="w0-alert" role="alert">
             <div class="test-class">
             <span>Header title</span>
-            </div><span>This is a test.</span>
+            </div>
+            <span>This is a test.</span>
             <button>&times;</button>
             </div>
             HTML,
@@ -273,7 +276,8 @@ final class RenderTest extends TestCase
             <div id="w0-alert" role="alert">
             <div class="test-class">
             <span>Header title</span>
-            </div><span>This is a test.</span>
+            </div>
+            <span>This is a test.</span>
             <button>&times;</button>
             </div>
             HTML,
@@ -295,7 +299,8 @@ final class RenderTest extends TestCase
             <div id="w0-alert" role="alert">
             <h1>
             Header title
-            </h1><span>This is a test.</span>
+            </h1>
+            <span>This is a test.</span>
             <button>&times;</button>
             </div>
             HTML,
