@@ -6,7 +6,6 @@ namespace Yiisoft\Yii\Widgets\Tests\Alert;
 
 use PHPUnit\Framework\TestCase;
 use Yii\Component\Alert;
-use Yii\Support\Assert;
 
 /**
  * @psalm-suppress PropertyNotSetInConstructor
