@@ -10,7 +10,6 @@ use Yii\Html\Helper\CssClass;
 use Yii\Widget\AbstractWidget;
 
 use function strtr;
-use function trim;
 
 /**
  * Represents an alert part.
@@ -442,9 +441,10 @@ final class Alert extends AbstractWidget
     {
         $attributes = $this->attributes;
         $parts = [];
+        $renderIcon = $this->renderIcon();
 
         $parts['{button}'] = $this->renderButton();
-        $parts['{icon}'] = $this->renderIcon();
+        $parts['{icon}'] = $renderIcon !== '' ? $renderIcon . PHP_EOL : '';
         $parts['{body}'] = $this->renderBody();
         $parts['{header}'] = $this->renderHeader();
 
@@ -479,8 +479,8 @@ final class Alert extends AbstractWidget
      */
     private function renderBody(): string
     {
-        return $this->bodyTag !== null
-            ? PHP_EOL . Tag::create($this->bodyTag, $this->body, $this->bodyAttributes) : $this->body;
+        return $this->bodyTag !== null && $this->body !== ''
+            ? Tag::create($this->bodyTag, $this->body, $this->bodyAttributes) : $this->body;
     }
 
     /**
@@ -488,7 +488,8 @@ final class Alert extends AbstractWidget
      */
     private function renderHeader(): string
     {
-        return Tag::create($this->headerTag, $this->header, $this->headerAttributes);
+        return $this->header !== ''
+            ? Tag::create($this->headerTag, $this->header, $this->headerAttributes) : '';
     }
 
     /**
@@ -496,7 +497,7 @@ final class Alert extends AbstractWidget
      */
     private function renderHeaderContainer(array $parts): string
     {
-        $headerHtml = trim(strtr($this->layoutHeader, $parts));
+        $headerHtml = strtr($this->layoutHeader, $parts);
 
         return $this->headerContainer && $headerHtml !== ''
             ? Tag::create('div', $headerHtml, $this->headerContainerAttributes)
@@ -508,7 +509,11 @@ final class Alert extends AbstractWidget
      */
     private function renderBodyContainer(array $parts): string
     {
-        $bodyHtml = trim(strtr($this->layoutBody, $parts));
+        $bodyHtml = strtr($this->layoutBody, $parts);
+
+        if ($this->header !== '' && $this->body !== '') {
+            $bodyHtml = PHP_EOL . $bodyHtml;
+        }
 
         return $this->bodyContainer ? Tag::create('div', $bodyHtml, $this->bodyContainerAttributes) : $bodyHtml;
     }

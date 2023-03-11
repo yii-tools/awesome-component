@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yiisoft\Yii\Widgets\Tests\Alert;
+namespace Yii\Component\Tests\Alert;
 
 use PHPUnit\Framework\TestCase;
 use Yii\Component\Alert;
