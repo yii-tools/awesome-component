@@ -488,7 +488,7 @@ final class Alert extends AbstractWidget
      */
     private function renderHeader(): string
     {
-        return $this->headerTag !== null && $this->header !== ''
+        return $this->header !== ''
             ? Tag::create($this->headerTag, $this->header, $this->headerAttributes) : '';
     }
 
