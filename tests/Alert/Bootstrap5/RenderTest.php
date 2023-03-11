@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yiisoft\Yii\Widgets\Tests\Alert\Bootstrap5;
+namespace Yii\Component\Tests\Alert\Bootstrap5;
 
 use PHPUnit\Framework\TestCase;
 use Yii\Component\Alert;
