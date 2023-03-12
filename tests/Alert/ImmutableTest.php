@@ -23,6 +23,8 @@ final class ImmutableTest extends TestCase
         $this->assertNotSame($alert, $alert->bodyContainer(false));
         $this->assertNotSame($alert, $alert->bodyContainerAttributes([]));
         $this->assertNotSame($alert, $alert->bodyContainerClass(''));
+        $this->assertNotSame($alert, $alert->bodyPrefix(''));
+        $this->assertNotSame($alert, $alert->bodySuffix(''));
         $this->assertNotSame($alert, $alert->bodyTag());
         $this->assertNotSame($alert, $alert->bodyTemplate(''));
         $this->assertNotSame($alert, $alert->buttonAttributes([]));
@@ -37,6 +39,8 @@ final class ImmutableTest extends TestCase
         $this->assertNotSame($alert, $alert->headerContainerAttributes([]));
         $this->assertNotSame($alert, $alert->headerContainerClass(''));
         $this->assertNotSame($alert, $alert->headerTag('div'));
+        $this->assertNotSame($alert, $alert->headerPrefix(''));
+        $this->assertNotSame($alert, $alert->headerSuffix(''));
         $this->assertNotSame($alert, $alert->headerTemplate(''));
         $this->assertNotSame($alert, $alert->iconAttributes([]));
         $this->assertNotSame($alert, $alert->iconClass(''));
@@ -44,5 +48,7 @@ final class ImmutableTest extends TestCase
         $this->assertNotSame($alert, $alert->iconContainerClass(''));
         $this->assertNotSame($alert, $alert->iconText(''));
         $this->assertNotSame($alert, $alert->id(''));
+        $this->assertNotSame($alert, $alert->prefix(''));
+        $this->assertNotSame($alert, $alert->suffix(''));
     }
 }
