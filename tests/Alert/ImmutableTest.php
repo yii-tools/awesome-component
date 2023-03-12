@@ -38,9 +38,9 @@ final class ImmutableTest extends TestCase
         $this->assertNotSame($alert, $alert->headerContainer(false));
         $this->assertNotSame($alert, $alert->headerContainerAttributes([]));
         $this->assertNotSame($alert, $alert->headerContainerClass(''));
-        $this->assertNotSame($alert, $alert->headerTag('div'));
         $this->assertNotSame($alert, $alert->headerPrefix(''));
         $this->assertNotSame($alert, $alert->headerSuffix(''));
+        $this->assertNotSame($alert, $alert->headerTag('div'));
         $this->assertNotSame($alert, $alert->headerTemplate(''));
         $this->assertNotSame($alert, $alert->iconAttributes([]));
         $this->assertNotSame($alert, $alert->iconClass(''));
@@ -50,5 +50,6 @@ final class ImmutableTest extends TestCase
         $this->assertNotSame($alert, $alert->id(''));
         $this->assertNotSame($alert, $alert->prefix(''));
         $this->assertNotSame($alert, $alert->suffix(''));
+        $this->assertNotSame($alert, $alert->template(''));
     }
 }

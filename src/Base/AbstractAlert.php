@@ -377,7 +377,7 @@ abstract class AbstractAlert extends AbstractWidget
             $parts['{suffix}'] = PHP_EOL . $this->headerSuffix;
         }
 
-        $headerHtml = trim(strtr($this->headerTemplate, $parts));
+        $headerHtml = strtr($this->headerTemplate, $parts);
 
         return $this->headerContainer && $headerHtml !== ''
             ? Tag::create('div', $headerHtml, $this->headerContainerAttributes)
@@ -401,7 +401,7 @@ abstract class AbstractAlert extends AbstractWidget
         }
 
 
-        $bodyHtml = trim(strtr($this->bodyTemplate, $parts));
+        $bodyHtml = strtr($this->bodyTemplate, $parts);
 
         return $this->bodyContainer ? Tag::create('div', $bodyHtml, $this->bodyContainerAttributes) : $bodyHtml;
     }
