@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yii\Component\Tests\Alert\Bootstrap5;
+namespace Yii\Component\Tests\Bootstrap5;
 
 use PHPUnit\Framework\TestCase;
 use Yii\Component\Alert;
@@ -11,7 +11,7 @@ use Yii\Support\Assert;
 /**
  * @psalm-suppress PropertyNotSetInConstructor
  */
-final class RenderTest extends TestCase
+final class AlertTest extends TestCase
 {
     /**
      * @link https://getbootstrap.com/docs/5.0/components/alerts/#additional-content
@@ -30,7 +30,7 @@ final class RenderTest extends TestCase
             <button class="btn-close" data-bs-dismiss="alert" aria-label="Close">&times;</button>
             </div>
             HTML,
-            Alert::widget(file: dirname(__DIR__, 3) . '/recipes/alert/bootstrap5.php')
+            Alert::widget(file: dirname(__DIR__, 2) . '/snippet/bootstrap5/alert_aditional_content.php')
                 ->body(
                     '<p>Aww yeah, you successfully read this important alert message. This example text is going to run ' .
                     'a bit longer so that you can see how spacing within an alert works with this kind of content.</p>' .
@@ -39,9 +39,6 @@ final class RenderTest extends TestCase
                 )
                 ->id('w0-alert')
                 ->header('Well done!')
-                ->headerClass('alert-heading')
-                ->headerTag('h4')
-                ->layoutHeader('{header}')
                 ->render(),
         );
     }
@@ -58,7 +55,7 @@ final class RenderTest extends TestCase
             <button class="btn-close" data-bs-dismiss="alert" aria-label="Close">&times;</button>
             </div>
             HTML,
-            Alert::widget(file: dirname(__DIR__, 3) . '/recipes/alert/bootstrap5.php')
+            Alert::widget(file: dirname(__DIR__, 2) . '/snippet//bootstrap5/alert_dismissing.php')
                 ->body('<strong>Holy guacamole!</strong> You should check in on some of those fields below.')
                 ->id('w0-alert')
                 ->render(),
@@ -82,13 +79,10 @@ final class RenderTest extends TestCase
             </div>
             </div>
             HTML,
-            Alert::widget(file: dirname(__DIR__, 3) . '/recipes/alert/bootstrap5.php')
+            Alert::widget(file: dirname(__DIR__, 2) . '/snippet/bootstrap5/alert_icon.php')
                 ->body('An example alert with an icon')
-                ->bodyContainerClass('align-items-center d-flex')
-                ->bodyContainer(true)
                 ->iconClass('bi bi-exclamation-triangle-fill flex-shrink-0 me-2')
                 ->id('w0-alert')
-                ->layoutBody('{icon}{body}{button}')
                 ->render(),
         );
     }
@@ -105,14 +99,11 @@ final class RenderTest extends TestCase
             <button class="float-right" data-bs-dismiss="alert" aria-label="Close">&times;</button>
             </div>
             HTML,
-            Alert::widget()
+            Alert::widget(file: dirname(__DIR__, 2) . '/snippet/bootstrap5/alert_link_color.php')
                 ->body(
                     'A simple primary alert with <a href="#" class="alert-link">an example link</a>.' .
                     'Give it a click if you like.'
                 )
-                ->buttonAttributes(['data-bs-dismiss' => 'alert', 'aria-label' => 'Close'])
-                ->buttonClass('float-right')
-                ->class('alert alert-primary')
                 ->id('w0-alert')
                 ->render(),
         );

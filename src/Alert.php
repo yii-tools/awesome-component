@@ -449,7 +449,14 @@ final class Alert extends AbstractWidget
         $parts['{header}'] = $this->renderHeader();
 
         $attributes['role'] = 'alert';
-        $contentAlert = $this->renderHeaderContainer($parts) . $this->renderBodyContainer($parts);
+
+        $renderHeaderContainer = $this->renderHeaderContainer($parts);
+        $renderBodyContainer = $this->renderBodyContainer($parts);
+
+        $contentAlert = match ($this->renderHeaderContainer($parts) !== '' && $this->renderBodyContainer($parts) !== '') {
+            true => $renderHeaderContainer . PHP_EOL . $renderBodyContainer,
+            default => $renderHeaderContainer . $renderBodyContainer,
+        };
 
         return $this->body !== '' ? Tag::create('div', $contentAlert, $attributes) : '';
     }
@@ -497,7 +504,7 @@ final class Alert extends AbstractWidget
      */
     private function renderHeaderContainer(array $parts): string
     {
-        $headerHtml = strtr($this->layoutHeader, $parts);
+        $headerHtml = trim(strtr($this->layoutHeader, $parts));
 
         return $this->headerContainer && $headerHtml !== ''
             ? Tag::create('div', $headerHtml, $this->headerContainerAttributes)
@@ -509,11 +516,7 @@ final class Alert extends AbstractWidget
      */
     private function renderBodyContainer(array $parts): string
     {
-        $bodyHtml = strtr($this->layoutBody, $parts);
-
-        if ($this->header !== '' && $this->body !== '') {
-            $bodyHtml = PHP_EOL . $bodyHtml;
-        }
+        $bodyHtml = trim(strtr($this->layoutBody, $parts));
 
         return $this->bodyContainer ? Tag::create('div', $bodyHtml, $this->bodyContainerAttributes) : $bodyHtml;
     }
