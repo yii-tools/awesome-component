@@ -150,7 +150,6 @@ abstract class AbstractAlert extends AbstractWidget
         return $new;
     }
 
-
     /**
      * Returns a new instance specifying when allows you to add an extra wrapper for the message body.
      *
@@ -368,7 +367,7 @@ abstract class AbstractAlert extends AbstractWidget
     protected function renderHeaderContainer(array $parts): string
     {
         $parts['{prefix}'] = '';
-        $parts['{suffix}']  = '';
+        $parts['{suffix}'] = '';
 
         if ($this->headerPrefix !== '') {
             $parts['{prefix}'] = $this->headerPrefix . PHP_EOL;
