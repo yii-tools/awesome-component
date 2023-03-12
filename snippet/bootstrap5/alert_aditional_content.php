@@ -8,5 +8,5 @@ return [
     'class()' => ['alert alert-success alert-dismissible fade show'],
     'headerClass()' => ['alert-heading'],
     'headerTag()' => ['h4'],
-    'layoutHeader()' => ['{header}'],
+    'headerTemplate()' => ['{header}'],
 ];

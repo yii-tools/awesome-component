@@ -22,7 +22,7 @@ final class AlertTest extends TestCase
             <<<HTML
             <div class="bg-blue-100 border-b border-blue-500 border-t px-4 py-3 text-blue-700" id="w0-alert" role="alert">
             <span class="align-middle inline-block mr-8"><p class="font-bold">Informational message</p><p class="text-sm">Some additional text to explain said message.</p></span>
-            <button class="float-right px-4 py-3" onclick="closeAlert()">&times;</button>
+            <button class="float-right px-4 py-3" type="button" onclick="closeAlert()"></button>
             </div>
             HTML,
             Alert::widget(file: dirname(__DIR__, 2) . '/snippet/tailwind/alert_banner.php')
@@ -44,7 +44,7 @@ final class AlertTest extends TestCase
             <<<HTML
             <div class="bg-yellow-100 border-l-2 border-yellow-500 p-4 text-yellow-700" id="w0-alert" role="alert">
             <span class="align-middle inline-block mr-8"><p><b>Be Warned</b></p> <p>Something not ideal might be happening.</p></span>
-            <button class="absolute bottom-0 px-4 py-3 right-0 top-0" onclick="closeAlert()">&times;</button>
+            <button class="absolute bottom-0 px-4 py-3 right-0 top-0" type="button" onclick="closeAlert()"></button>
             </div>
             HTML,
             Alert::widget(file: dirname(__DIR__, 2) . '/snippet/tailwind/alert_left_accent_border.php')
@@ -62,7 +62,7 @@ final class AlertTest extends TestCase
         Assert::equalsWithoutLE(
             <<<HTML
             <div class="bg-gray-900 lg:px-4 py-4 text-center text-white" id="w0-alert" role="alert">
-            <button class="bottom-0 px-4 py-3 right-0 top-0" onclick="closeAlert()">&times;</button>
+            <button class="bottom-0 px-4 py-3 right-0 top-0" type="button" onclick="closeAlert()"></button>
             <div class="bg-gray-800 p-2 flex items-center leading-none lg:inline-flex lg:rounded-full">
             <div class="bg-gray-500 flex font-bold ml-2 mr-3 px-2 py-1 rounded-full text-xs uppercase">
             <i class="not-italic">🔔 New </i>
@@ -93,7 +93,7 @@ final class AlertTest extends TestCase
             <p class="align-middle flex-grow inline-block mr-8">
             Something happened that you should know about.
             </p>
-            <button class="float-right px-4 py-3" onclick="closeAlert()">&times;</button>
+            <button class="float-right px-4 py-3" type="button" onclick="closeAlert()"></button>
             </div>
             HTML,
             Alert::widget(file: dirname(__DIR__, 2) . '/snippet/tailwind/alert_solid.php')
@@ -113,7 +113,7 @@ final class AlertTest extends TestCase
             <<<HTML
             <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" id="w0-alert" role="alert">
             <span class="align-middle inline-block mr-8"><b>Holy smokes!</b> Something seriously bad happened.</span>
-            <button class="absolute bottom-0 px-4 py-3 right-0 top-0" onclick="closeAlert()">&times;</button>
+            <button class="absolute bottom-0 px-4 py-3 right-0 top-0" type="button" onclick="closeAlert()"></button>
             </div>
             HTML,
             Alert::widget(file: dirname(__DIR__, 2) . '/snippet/tailwind/alert_traditional.php')
@@ -136,7 +136,7 @@ final class AlertTest extends TestCase
             </div>
             <div class="bg-red-100 border border-red-400 border-t-0 rounded-b text-red-700">
             <span class="align-middle inline-block mr-8 px-4 py-3">Something not ideal might be happening.</span>
-            <button class="float-right px-4 py-3" onclick="closeAlert()">&times;</button>
+            <button class="float-right px-4 py-3" type="button" onclick="closeAlert()"></button>
             </div>
             </div>
             HTML,
@@ -160,7 +160,7 @@ final class AlertTest extends TestCase
             <i class="not-italic">🛈</i>
             </div>
             <span class="align-middle inline-block flex-grow mr-8"><p class="font-bold">Our privacy policy has changed</p><p class="text-sm">Make sure you know how these changes affect you.</p></span>
-            <button class="float-right px-4 py-3" onclick="closeAlert()">&times;</button>
+            <button class="float-right px-4 py-3" type="button" onclick="closeAlert()"></button>
             </div>
             </div>
             HTML,

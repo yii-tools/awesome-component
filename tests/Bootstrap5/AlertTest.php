@@ -27,7 +27,7 @@ final class AlertTest extends TestCase
             <span><p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
             <hr>
             <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy</p></span>
-            <button class="btn-close" data-bs-dismiss="alert" aria-label="Close">&times;</button>
+            <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             HTML,
             Alert::widget(file: dirname(__DIR__, 2) . '/snippet/bootstrap5/alert_aditional_content.php')
@@ -52,7 +52,7 @@ final class AlertTest extends TestCase
             <<<HTML
             <div class="alert alert-success alert-dismissible fade show" id="w0-alert" role="alert">
             <span><strong>Holy guacamole!</strong> You should check in on some of those fields below.</span>
-            <button class="btn-close" data-bs-dismiss="alert" aria-label="Close">&times;</button>
+            <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             HTML,
             Alert::widget(file: dirname(__DIR__, 2) . '/snippet//bootstrap5/alert_dismissing.php')
@@ -75,7 +75,7 @@ final class AlertTest extends TestCase
             <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"></i>
             </div>
             <span>An example alert with an icon</span>
-            <button class="btn-close" data-bs-dismiss="alert" aria-label="Close">&times;</button>
+            <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             </div>
             HTML,
@@ -96,7 +96,7 @@ final class AlertTest extends TestCase
             <<<HTML
             <div class="alert alert-primary" id="w0-alert" role="alert">
             <span>A simple primary alert with <a href="#" class="alert-link">an example link</a>.Give it a click if you like.</span>
-            <button class="float-right" data-bs-dismiss="alert" aria-label="Close">&times;</button>
+            <button class="float-right" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             HTML,
             Alert::widget(file: dirname(__DIR__, 2) . '/snippet/bootstrap5/alert_link_color.php')
