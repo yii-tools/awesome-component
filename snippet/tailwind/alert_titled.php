@@ -12,5 +12,5 @@ return [
     'headerClass()' => ['font-semibold'],
     'headerContainer()' => [],
     'headerContainerClass()' => ['bg-red-500 font-bold px-4 py-2 rounded-t text-white'],
-    'layoutHeader()' => ['{header}'],
+    'headerTemplate()' => ['{header}'],
 ];

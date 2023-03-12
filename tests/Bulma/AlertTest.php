@@ -22,7 +22,7 @@ final class AlertTest extends TestCase
             <<<HTML
             <div class="notification is-danger" id="w0-alert" role="alert">
             <span>An example alert with an icon.</span>
-            <button class="delete">&times;</button>
+            <button class="delete" type="button"></button>
             </div>
             HTML,
             Alert::widget(file: dirname(__DIR__, 2) . '/snippet/bulma/alert_notification.php')
@@ -37,7 +37,7 @@ final class AlertTest extends TestCase
         Assert::equalsWithoutLE(
             <<<HTML
             <div class="notification is-danger" id="w0-alert" role="alert">
-            <button class="delete">&times;</button>
+            <button class="delete" type="button"></button>
             <div class="is-flex is-align-items-center">
             <div>
             <i class="fa-2x fas fa-exclamation-circle mr-4"></i>
