@@ -19,9 +19,10 @@ final class Alert extends Base\AbstractAlert
     {
         $attributes = $this->attributes;
         $parts = [];
+        $renderButton = $this->renderButton();
         $renderIcon = $this->renderIcon();
 
-        $parts['{button}'] = $this->renderButton();
+        $parts['{button}'] = $renderButton;
         $parts['{icon}'] = $renderIcon !== '' ? $renderIcon . PHP_EOL : '';
         $parts['{body}'] = $this->renderBody();
         $parts['{header}'] = $this->renderHeader();
@@ -34,7 +35,9 @@ final class Alert extends Base\AbstractAlert
                 '{header}' => $this->renderHeaderContainer($parts) . PHP_EOL,
                 '{body}' => $this->renderBodyContainer($parts),
                 '{suffix}' => PHP_EOL . $this->suffix,
-                '{button}' => $this->renderButton(),
+                '{button}' => $renderButton,
+                '{icon}' => $renderIcon,
+
             ],
         );
 

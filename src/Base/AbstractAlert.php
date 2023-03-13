@@ -336,11 +336,14 @@ abstract class AbstractAlert extends AbstractWidget
      */
     protected function renderIcon(): string
     {
-        return Tag::create(
-            'div',
-            Tag::create('i', $this->iconText, $this->iconAttributes),
-            $this->iconContainerAttributes
-        );
+        return match ($this->iconContainer) {
+            true => Tag::create(
+                'div',
+                Tag::create('i', $this->iconText, $this->iconAttributes),
+                $this->iconContainerAttributes
+            ),
+            default =>  Tag::create('i', $this->iconText, $this->iconAttributes),
+        };
     }
 
     /**
@@ -377,7 +380,7 @@ abstract class AbstractAlert extends AbstractWidget
             $parts['{suffix}'] = PHP_EOL . $this->headerSuffix;
         }
 
-        $headerHtml = strtr($this->headerTemplate, $parts);
+        $headerHtml = trim(strtr($this->headerTemplate, $parts));
 
         return $this->headerContainer && $headerHtml !== ''
             ? Tag::create('div', $headerHtml, $this->headerContainerAttributes)
