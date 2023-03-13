@@ -12,6 +12,7 @@ use Yii\Html\Helper\CssClass;
 trait HasIcon
 {
     protected array $iconAttributes = [];
+    protected bool $iconContainer = true;
     protected array $iconContainerAttributes = [];
     protected string $iconText = '';
 
@@ -39,6 +40,19 @@ trait HasIcon
     {
         $new = clone $this;
         CssClass::add($new->iconAttributes, $value);
+
+        return $new;
+    }
+
+    /**
+     * Returns a new instance specifying when allows you to add a div tag to the icon extra wrapper.
+     *
+     * @param bool $value The value indicating whether to add a div tag to the icon extra wrapper.
+     */
+    public function iconContainer(bool $value = true): static
+    {
+        $new = clone $this;
+        $new->iconContainer = $value;
 
         return $new;
     }
