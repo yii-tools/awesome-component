@@ -342,7 +342,7 @@ abstract class AbstractAlert extends AbstractWidget
                 Tag::create('i', $this->iconText, $this->iconAttributes),
                 $this->iconContainerAttributes
             ),
-            default =>  Tag::create('i', $this->iconText, $this->iconAttributes),
+            default => Tag::create('i', $this->iconText, $this->iconAttributes),
         };
     }
 

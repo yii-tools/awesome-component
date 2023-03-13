@@ -37,7 +37,6 @@ final class Alert extends Base\AbstractAlert
                 '{suffix}' => PHP_EOL . $this->suffix,
                 '{button}' => $renderButton,
                 '{icon}' => $renderIcon,
-
             ],
         );
 
